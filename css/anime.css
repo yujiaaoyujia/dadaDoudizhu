@@ -1,0 +1,1031 @@
+/*!
+ * anime.css v1.0.0
+ * Created by zero on 2017-03-23
+ * 嗒嗒斗地主活动动画样式库
+ */
+
+/* 全局动画 */
+.anime-title {
+  -webkit-animation: anime-title .75s infinite alternate;
+  animation: anime-title .75s infinite alternate;
+}
+@-webkit-keyframes anime-title {
+  100% { -webkit-transform: skew(-2deg, -1deg) rotateY(3deg) rotateZ(3deg) scaleY(1.05); }
+}
+@keyframes anime-title {
+  100% { transform: skew(-2deg, -1deg) rotateY(3deg) rotateZ(3deg) scaleY(1.05); }
+}
+
+.anime-titleAct {
+  -webkit-animation: anime-titleAct 1.5s infinite;
+  animation: anime-titleAct 1.5s infinite;
+}
+@-webkit-keyframes anime-titleAct {
+  0%, 100% { -webkit-transform: translate3d(0, 0, 0); }
+  10%, 50%, 90% { -webkit-transform: translate3d(-.08rem, .06rem, 0); }
+  20%, 80% { -webkit-transform: translate3d(.04rem, -.02rem, 0); }
+  30%, 70% { -webkit-transform: translate3d(-.02rem, -.05rem, 0); }
+  40%, 60% { -webkit-transform: translate3d(.06rem, .04rem, 0); }
+}
+@keyframes anime-titleAct {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  10%, 50%, 90% { transform: translate3d(-.08rem, .06rem, 0); }
+  20%, 80% { transform: translate3d(.04rem, -.02rem, 0); }
+  30%, 70% { transform: translate3d(-.02rem, -.05rem, 0); }
+  40%, 60% { transform: translate3d(.06rem, .04rem, 0); }
+}
+
+.anime-fadeIn {
+  -webkit-animation: anime-fadeIn 0.3s both;
+  animation: anime-fadeIn 0.3s both;
+}
+@-webkit-keyframes anime-fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes anime-fadeIn {
+  0% { opacity: 0; }
+  100% { opacity: 1; }
+}
+
+.anime-fadeOut {
+  -webkit-animation: anime-fadeOut 0.3s both;
+  animation: anime-fadeOut 0.3s both;
+}
+@-webkit-keyframes anime-fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes anime-fadeOut {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.anime-zoomIn {
+  -webkit-animation: anime-zoomIn 0.5s both;
+  animation: anime-zoomIn 0.5s both;
+}
+@-webkit-keyframes anime-zoomIn {
+  0% { opacity: 0; -webkit-transform: scale3d(.3, .3, .3); }
+  50% { opacity: 1; }
+}
+@keyframes anime-zoomIn {
+  0% { opacity: 0; transform: scale3d(.3, .3, .3); }
+  50% { opacity: 1; }
+}
+
+.anime-zoomOut {
+  -webkit-animation: anime-zoomOut 1s both;
+  animation: anime-zoomOut 1s both;
+}
+@-webkit-keyframes anime-zoomOut {
+  0% { opacity: 1; }
+  50% { opacity: 0; -webkit-transform: scale3d(.3, .3, .3); }
+  100% { opacity: 0; }
+}
+@keyframes anime-zoomOut {
+  0% { opacity: 1; }
+  50% { opacity: 0; transform: scale3d(.3, .3, .3); }
+  100% { opacity: 0; }
+}
+
+.anime-arrow {
+  -webkit-animation: anime-arrow .5s infinite alternate;
+  animation: anime-arrow .5s infinite alternate;
+}
+@-webkit-keyframes anime-arrow {
+  100% { -webkit-transform: translateX(.15rem); }
+}
+@keyframes anime-arrow {
+  100% { transform: translateX(.15rem); }
+}
+
+.anime-shake {
+  -webkit-animation: anime-shake 2s infinite;
+  animation: anime-shake 2s infinite;
+}
+@-webkit-keyframes anime-shake {
+  0%, 100% { -webkit-transform: translate3d(0, 0, 0); }
+  20%, 60% { -webkit-transform: translate3d(-.03rem, .02rem, 0); }
+  40%, 80% { -webkit-transform: translate3d(.02rem, 0, 0); }
+}
+@keyframes anime-shake {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  20%, 60% { transform: translate3d(-.03rem, .02rem, 0); }
+  40%, 80% { transform: translate3d(.02rem, 0, 0); }
+}
+
+.anime-bgMove {
+  -webkit-animation: anime-bgMove 8s linear infinite;
+  animation: anime-bgMove 8s linear infinite;
+}
+@-webkit-keyframes anime-bgMove {
+  0% { -webkit-transform: translate3d(-25%, 0, 0); }
+  100% { -webkit-transform: translate3d(0, 0, 0); }
+}
+@keyframes anime-bgMove {
+  0% { transform: translate3d(-25%, 0, 0); }
+  100% { transform: translate3d(0, 0, 0); }
+}
+
+
+/* page0 */
+.anime-farmer {
+  -webkit-animation: anime-farmer .5s, anime-farmer2 .6s .6s ease-in infinite alternate;
+  animation: anime-farmer .5s, anime-farmer2 .6s .6s ease-in infinite alternate;
+}
+@-webkit-keyframes anime-farmer {
+  0% { -webkit-transform: translateY(1rem); opacity: 0; }
+}
+@keyframes anime-farmer {
+  0% { transform: translateY(1rem); opacity: 0; }
+}
+@-webkit-keyframes anime-farmer2 {
+  100% { -webkit-transform: translateY(.12rem); }
+}
+@keyframes anime-farmer2 {
+  100% { transform: translateY(.12rem); }
+}
+
+.anime-boss {
+  -webkit-animation: anime-boss .5s;
+  animation: anime-boss .5s;
+}
+@-webkit-keyframes anime-boss {
+  0% { -webkit-transform: translate(-100%, -30%) scale(0.3); }
+}
+@keyframes anime-boss {
+  0% { transform: translate(-100%, -30%) scale(0.3); }
+}
+
+.anime-bean {
+  -webkit-animation: anime-bean .8s, anime-bean2 1.5s 1s ease-in infinite alternate;
+  animation: anime-bean .8s, anime-bean2 1.5s 1s ease-in infinite alternate;
+}
+@-webkit-keyframes anime-bean {
+  0% { -webkit-transform: translate(-100%, -100%) scale(0.3); opacity: 0.5; }
+}
+@keyframes anime-bean {
+  0% { transform: translate(-100%, -100%) scale(0.3); opacity: 0.5; }
+}
+@-webkit-keyframes anime-bean2 {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+@keyframes anime-bean2 {
+  0% { opacity: 1; }
+  100% { opacity: 0; }
+}
+
+.anime-boyHappy {
+  -webkit-animation: anime-boyHappy .5s, anime-boyHappy2 1s .8s infinite alternate;
+  animation: anime-boyHappy .5s, anime-boyHappy2 1s .8s infinite alternate;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+@-webkit-keyframes anime-boyHappy {
+  0% { -webkit-transform: rotate(-15deg);  }
+}
+@keyframes anime-boyHappy {
+  0% { transform: rotate(-15deg);  }
+}
+@-webkit-keyframes anime-boyHappy2 {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(10deg); }
+}
+@keyframes anime-boyHappy2 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(10deg); }
+}
+
+.anime-boyLeft {
+  -webkit-animation: anime-boyLeft .5s;
+  animation: anime-boyLeft .5s;
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+}
+@-webkit-keyframes anime-boyLeft {
+  0% {
+    -webkit-transform: rotate(25deg);
+  }
+}
+@keyframes anime-boyLeft {
+  0% {
+    transform: rotate(25deg);
+  }
+}
+
+.anime-boyRight {
+  -webkit-animation: anime-boyRight .5s;
+  animation: anime-boyRight .5s;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+@-webkit-keyframes anime-boyRight {
+  0% { -webkit-transform: rotate(-30deg); }
+}
+@keyframes anime-boyRight {
+  0% { transform: rotate(-30deg); }
+}
+
+.anime-boyLight {
+  -webkit-animation: anime-boyLight 1s both, anime-boyLight2 1s 1.5s infinite alternate;
+  animation: anime-boyLight 1s both, anime-boyLight2 1s 1.5s infinite alternate;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+@-webkit-keyframes anime-boyLight {
+  0%, 50% { opacity: 0; }
+  100% { opacity: .5; }
+}
+@keyframes anime-boyLight {
+  0%, 50% { opacity: 0; }
+  100% { opacity: .5; }
+}
+@-webkit-keyframes anime-boyLight2 {
+  0% { opacity: .5; }
+  100% { opacity: 1; -webkit-transform: rotate(5deg); }
+}
+@keyframes anime-boyLight2 {
+  0% { opacity: .5; }
+  100% { opacity: 1; transform: rotate(5deg); }
+}
+
+.anime-girl {
+  -webkit-animation: anime-girl .5s, anime-girl2 2s .8s linear infinite;
+  animation: anime-girl .5s, anime-girl2 2s .8s linear infinite;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+@-webkit-keyframes anime-girl {
+  0% { -webkit-transform: skewX(-10deg) rotate(5deg); }
+}
+@keyframes anime-girl {
+  0% { transform: skewX(-10deg) rotate(5deg); }
+}
+@-webkit-keyframes anime-girl2 {
+  0%, 100% { transform: skewX(0deg); }
+  25% { transform: skewX(1deg); }
+  75% { transform: skewX(-3deg); }
+}
+@keyframes anime-girl2 {
+  0%, 100% { transform: skewX(0deg); }
+  25% { transform: skewX(1deg); }
+  75% { transform: skewX(-3deg); }
+}
+
+.anime-girlHappy {
+  -webkit-animation: anime-girlHappy .5s, anime-girlHappy2 1s 1.2s infinite alternate;
+  animation: anime-girlHappy .5s, anime-girlHappy2 1s 1.2s infinite alternate;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+@-webkit-keyframes anime-girlHappy {
+  0% { -webkit-transform: rotate(45deg); }
+}
+@keyframes anime-girlHappy {
+  0% { transform: rotate(45deg); }
+}
+@-webkit-keyframes anime-girlHappy2 {
+  0% { -webkit-transform: rotate(0deg); }
+  100% { -webkit-transform: rotate(10deg); }
+}
+@keyframes anime-girlHappy2 {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(10deg); }
+}
+
+.anime-girlLight {
+  -webkit-animation: anime-girlLight 1s both, anime-girlLight2 1s 1.2s infinite alternate;
+  animation: anime-girlLight 1s both, anime-girlLight2 1s 1.2s infinite alternate;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+@-webkit-keyframes anime-girlLight {
+  0%, 50% { opacity: 0; }
+  100% { opacity: .5; }
+}
+@keyframes anime-girlLight {
+  0%, 50% { opacity: 0; }
+  100% { opacity: .5; }
+}
+@-webkit-keyframes anime-girlLight2 {
+  0% { opacity: .5; }
+  100% { opacity: 1; -webkit-transform: translateX(.08rem); }
+}
+@keyframes anime-girlLight2 {
+  0% { opacity: .5; }
+  100% { opacity: 1; transform: translateX(.08rem); }
+}
+
+
+/* page1 */
+.anime-cars {
+  -webkit-animation: anime-cars 1.5s infinite;
+  animation: anime-cars 1.5s infinite;
+}
+@-webkit-keyframes anime-cars {
+  0%, 100% { -webkit-transform: translate3d(0, 0, 0); }
+  20%, 60% { -webkit-transform: translate3d(.06rem, .01rem, 0); }
+  40%, 80% { -webkit-transform: translate3d(.01rem, .04rem, 0); }
+}
+@keyframes anime-cars {
+  0%, 100% { transform: translate3d(0, 0, 0); }
+  20%, 60% { transform: translate3d(.06rem, .01rem, 0); }
+  40%, 80% { transform: translate3d(.01rem, .04rem, 0); }
+}
+
+.anime-fire {
+  -webkit-animation: anime-fire 1s infinite;
+  animation: anime-fire 1s infinite;
+}
+@-webkit-keyframes anime-fire {
+  0%, 100% { -webkit-transform: scale(1); }
+  50% { -webkit-transform: scale(1.05); }
+}
+@keyframes anime-fire {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.05); }
+}
+
+.anime-blaze {
+  -webkit-animation: anime-blaze 1s infinite;
+  animation: anime-blaze 1s infinite;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+@-webkit-keyframes anime-blaze {
+  25% { -webkit-transform: rotate(5deg); }
+  50% { -webkit-transform: rotate(0deg); }
+  75% { -webkit-transform: rotate(-5deg); }
+}
+@keyframes anime-blaze {
+  25% { transform: rotate(5deg); }
+  50% { transform: rotate(0deg); }
+  75% { transform: rotate(-5deg); }
+}
+
+.anime1-girlLeft {
+  -webkit-animation: anime1-girlLeft .5s, anime1-girlHand 1s .8s infinite alternate;
+  animation: anime1-girlLeft .5s, anime1-girlHand 1s .8s infinite alternate;
+  -webkit-transform-origin: left;
+  transform-origin: left;
+}
+@-webkit-keyframes anime1-girlLeft {
+  0% { -webkit-transform: scaleX(0.6) skewY(15deg); }
+}
+@keyframes anime1-girlLeft {
+  0% { transform: scaleX(0.6) skewY(15deg); }
+}
+
+.anime1-girlRight {
+  -webkit-animation: anime1-girlRight .5s, anime1-girlHand 1s .8s infinite alternate;
+  animation: anime1-girlRight .5s, anime1-girlHand 1s .8s infinite alternate;
+}
+@-webkit-keyframes anime1-girlRight {
+  0% { -webkit-transform: scale(1.3) rotate(-15deg) translate(-0.1rem,-0.3rem); }
+}
+@keyframes anime1-girlRight {
+  0% { transform: scale(1.3) rotate(-15deg) translate(-0.1rem,-0.3rem); }
+}
+@-webkit-keyframes anime1-girlHand {
+  100% { -webkit-transform: rotate(-3deg); }
+}
+@keyframes anime1-girlHand {
+  100% { transform: rotate(-3deg); }
+}
+
+.anime1-girlHappy {
+  -webkit-animation: anime1-girlHappy .5s, anime1-girlHappy2 1s .8s infinite alternate;
+  animation: anime1-girlHappy .5s, anime1-girlHappy2 1s .8s infinite alternate;
+}
+@-webkit-keyframes anime1-girlHappy {
+  0% { opacity: 0; }
+}
+@keyframes anime1-girlHappy {
+  0% { opacity: 0; }
+}
+@-webkit-keyframes anime1-girlHappy2 {
+  100% { -webkit-transform: rotate(8deg); }
+}
+@keyframes anime1-girlHappy2 {
+  100% { transform: rotate(8deg); }
+}
+
+.anime1-girlLight {
+  -webkit-animation: anime1-girlLight 1s .8s infinite alternate;
+  animation: anime1-girlLight 1s .8s infinite alternate;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+@-webkit-keyframes anime1-girlLight {
+  0% { opacity: 0.5; }
+  100% { -webkit-transform: rotate(-5deg) translate(-.02rem, -0.2rem); opacity: 1; }
+}
+@keyframes anime1-girlLight {
+  0% { opacity: 0.5; }
+  100% { transform: rotate(-5deg) translate(-.02rem, -0.2rem); opacity: 1; }
+}
+
+.anime1-woman {
+  -webkit-animation: anime1-woman 1.2s .7s infinite alternate;
+  animation: anime1-woman 1.2s .7s infinite alternate;
+}
+@-webkit-keyframes anime1-woman {
+  100% { -webkit-transform: skewX(3deg); }
+}
+@keyframes anime1-woman {
+  100% { transform: skewX(3deg); }
+}
+
+.anime1-womanLeft {
+  -webkit-animation: anime1-womanLeft .5s, anime1-womanLeft2 1.2s .7s infinite alternate;
+  animation: anime1-womanLeft .5s, anime1-womanLeft2 1.2s .7s infinite alternate;
+  -webkit-transform-origin: left;
+  transform-origin: left;
+}
+@-webkit-keyframes anime1-womanLeft {
+  0% { -webkit-transform: scale(0.8) rotate(20deg); }
+}
+@keyframes anime1-womanLeft {
+  0% { transform: scale(0.8) rotate(20deg); }
+}
+@-webkit-keyframes anime1-womanLeft2 {
+  100% { -webkit-transform: rotate(-3deg); }
+}
+@keyframes anime1-womanLeft2 {
+  100% { transform: rotate(-3deg); }
+}
+
+.anime1-womanHappy {
+  -webkit-animation: anime1-womanHappy .5s, anime1-womanHappy2 1.2s .7s infinite alternate;
+  animation: anime1-womanHappy .5s, anime1-womanHappy2 1.2s .7s infinite alternate;
+  -webkit-transform-origin: bottom;
+  transform-origin: bottom;
+}
+@-webkit-keyframes anime1-womanHappy {
+  0% { opacity: 0 }
+}
+@keyframes anime1-womanHappy {
+  0% { opacity: 0 }
+}
+@-webkit-keyframes anime1-womanHappy2 {
+  100% { -webkit-transform: rotate(5deg); }
+}
+@keyframes anime1-womanHappy2 {
+  100% { transform: rotate(5deg); }
+}
+
+.anime1-womanLight {
+  -webkit-animation: anime1-womanLight 1.2s .7s infinite alternate;
+  animation: anime1-womanLight 1.2s .7s infinite alternate;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+@-webkit-keyframes anime1-womanLight {
+  0% { opacity: 0.5; }
+  100% { -webkit-transform: rotate(-3deg) translateY(-.1rem); opacity: 1; }
+}
+@keyframes anime1-womanLight {
+  0% { opacity: 0.5; }
+  100% { transform: rotate(-3deg) translateY(-.1rem); opacity: 1; }
+}
+
+.anime1-farmer {
+  -webkit-animation: anime1-farmer .5s, anime1-farmer2 .8s .8s infinite alternate;
+  animation: anime1-farmer .5s, anime1-farmer2 .8s .8s infinite alternate;
+}
+@-webkit-keyframes anime1-farmer {
+  0% { -webkit-transform: translateY(1rem); opacity: 0; }
+}
+@keyframes anime1-farmer {
+  0% { transform: translateY(1rem); opacity: 0; }
+}
+@-webkit-keyframes anime1-farmer2 {
+  100% { -webkit-transform: rotate(-5deg); }
+}
+@keyframes anime1-farmer2 {
+  100% { transform: rotate(-5deg); }
+}
+
+.anime1-farmerHand {
+  -webkit-animation: anime1-farmerHand .5s .1s both, anime1-farmerHand2 .5s .8s infinite alternate;
+  animation: anime1-farmerHand .5s .1s both, anime1-farmerHand2 .5s .8s infinite alternate;
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+}
+@-webkit-keyframes anime1-farmerHand {
+  0% { -webkit-transform: scale(0); opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes anime1-farmerHand {
+  0% { transform: scale(0); opacity: 0; }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes anime1-farmerHand2 {
+  100% { -webkit-transform: rotate(30deg); }
+}
+@keyframes anime1-farmerHand2 {
+  100% { transform: rotate(30deg); }
+}
+
+.anime1-boss {
+  -webkit-animation: anime1-boss .5s;
+  animation: anime1-boss .5s;
+}
+@-webkit-keyframes anime1-boss {
+  0% { -webkit-transform: translateX(-100%); opacity: 0; }
+}
+@keyframes anime1-boss {
+  0% { transform: translateX(-100%); opacity: 0; }
+}
+
+.anime-gem {
+  -webkit-animation: anime-gem .5s, anime-gem2 1s .5s linear infinite alternate;
+  animation: anime-gem .5s, anime-gem2 1s .5s linear infinite alternate;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+@-webkit-keyframes anime-gem {
+  0% { -webkit-transform: scale(0.3) translate(-5rem, -2rem); }
+}
+@keyframes anime-gem {
+  0% { transform: scale(0.3) translate(-5rem, -2rem); }
+}
+@-webkit-keyframes anime-gem2 {
+  0% { opacity: 1; }
+  100% { -webkit-transform: rotate(-2deg); opacity: .5; }
+}
+@keyframes anime-gem2 {
+  0% { opacity: 1; }
+  100% { transform: rotate(-2deg); opacity: .5; }
+}
+
+
+/* page2 */
+.anime-tyre {
+  -webkit-animation: anime-tyre 5s linear infinite;
+  animation: anime-tyre 5s linear infinite;
+}
+@-webkit-keyframes anime-tyre {
+  100% { -webkit-transform: rotate(-360deg); }
+}
+@keyframes anime-tyre {
+  100% { transform: rotate(-360deg); }
+}
+
+.anime-kidHand {
+  -webkit-animation: anime-kidHand .5s, anime-kidHand2 .8s .7s infinite alternate;
+  animation: anime-kidHand .5s, anime-kidHand2 .8s .7s infinite alternate;
+  -webkit-transform-origin: right;
+  transform-origin: right;
+}
+@-webkit-keyframes anime-kidHand {
+  0% { -webkit-transform: skewY(-13deg); }
+}
+@keyframes anime-kidHand {
+  0% { transform: skewY(-13deg); }
+}
+@-webkit-keyframes anime-kidHand2 {
+  100% { -webkit-transform: rotate(3deg); }
+}
+@keyframes anime-kidHand2 {
+  100% { transform: rotate(3deg); }
+}
+
+.anime-kidHead {
+  -webkit-animation: anime-kidHead .5s, anime-kidHead2 .8s .7s infinite alternate;
+  animation: anime-kidHead .5s, anime-kidHead2 .8s .7s infinite alternate;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+@-webkit-keyframes anime-kidHead {
+  0% { -webkit-transform: rotate(-20deg); }
+}
+@keyframes anime-kidHead {
+  0% { transform: rotate(-20deg); }
+}
+@-webkit-keyframes anime-kidHead2 {
+  100% { -webkit-transform: rotate(-14deg); }
+}
+@keyframes anime-kidHead2 {
+  100% { transform: rotate(-14deg); }
+}
+
+.anime-kidLight {
+  -webkit-animation: anime-kidLight .8s .7s infinite alternate;
+  animation: anime-kidLight .8s .7s infinite alternate;
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+}
+@-webkit-keyframes anime-kidLight {
+  0% { opacity: 0.5; }
+  100% { -webkit-transform: rotate(3deg) translate(.05rem, -.1rem); opacity: 1; }
+}
+@keyframes anime-kidLight {
+  0% { opacity: 0.5; }
+  100% { transform: rotate(3deg) translate(.05rem, -.1rem); opacity: 1; }
+}
+
+.anime2-boyHand {
+  -webkit-animation: anime2-boyHand .5s, anime2-boyHand2 1.3s .9s infinite alternate;
+  animation: anime2-boyHand .5s, anime2-boyHand2 1.3s .9s infinite alternate;
+  -webkit-transform-origin: right;
+  transform-origin: right;
+}
+@-webkit-keyframes anime2-boyHand {
+  0% { -webkit-transform: skew(10deg, -8deg); }
+}
+@keyframes anime2-boyHand {
+  0% { transform: skew(10deg, -8deg); }
+}
+@-webkit-keyframes anime2-boyHand2 {
+  100% { -webkit-transform: rotate(6deg); }
+}
+@keyframes anime2-boyHand2 {
+  100% { transform: rotate(6deg); }
+}
+
+.anime2-boyHead {
+  -webkit-animation: anime2-boyHead .5s, anime2-boyHead2 1.3s .9s infinite alternate;
+  animation: anime2-boyHead .5s, anime2-boyHead2 1.3s .9s infinite alternate;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+@-webkit-keyframes anime2-boyHead {
+  0% { -webkit-transform: rotate(-10deg); }
+}
+@keyframes anime2-boyHead {
+  0% { transform: rotate(-10deg); }
+}
+@-webkit-keyframes anime2-boyHead2 {
+  100% { -webkit-transform: rotate(-6deg); }
+}
+@keyframes anime2-boyHead2 {
+  100% { transform: rotate(-6deg); }
+}
+
+.anime2-boyLight {
+  -webkit-animation: anime2-boyLight 1.3s .9s infinite alternate;
+  animation: anime2-boyLight 1.3s .9s infinite alternate;
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+}
+@-webkit-keyframes anime2-boyLight {
+  0% { opacity: 0.5; }
+  100% { -webkit-transform: rotate(6deg) translate(.05rem, -.25rem); opacity: 1; }
+}
+@keyframes anime2-boyLight {
+  0% { opacity: 0.5; }
+  100% { transform: rotate(6deg) translate(.05rem, -.25rem); opacity: 1; }
+}
+
+.anime2-boss {
+  -webkit-animation: anime2-boss .5s, anime2-boss2 1.2s .8s infinite alternate;
+  animation: anime2-boss .5s, anime2-boss2 1.2s .8s infinite alternate;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+@-webkit-keyframes anime2-boss {
+  0% { -webkit-transform: translate(1.6rem, 0.15rem); }
+}
+@keyframes anime2-boss {
+  0% { transform: translate(1.6rem, 0.15rem); }
+}
+@-webkit-keyframes anime2-boss2 {
+  100% { -webkit-transform: rotate(-5deg); }
+}
+@keyframes anime2-boss2 {
+  100% { transform: rotate(-5deg); }
+}
+
+.anime2-farmer {
+  -webkit-animation: anime2-farmer .5s, anime2-farmer2 .8s .7s linear infinite alternate;
+  animation: anime2-farmer .5s, anime2-farmer2 .8s .7s linear infinite alternate;
+}
+@-webkit-keyframes anime2-farmer {
+  0% { -webkit-transform: translateX(-1.5rem); opacity: .3; }
+}
+@keyframes anime2-farmer {
+  0% { transform: translateX(-1.5rem); opacity: .3; }
+}
+@-webkit-keyframes anime2-farmer2 {
+  100% { -webkit-transform: rotate(5deg); }
+}
+@keyframes anime2-farmer2 {
+  100% { transform: rotate(5deg); }
+}
+
+.anime2-farmerHand {
+  -webkit-animation: anime2-farmerHand 1s both;
+  animation: anime2-farmerHand 1s both;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+@-webkit-keyframes anime2-farmerHand {
+  0% { -webkit-transform: translateX(-1.5rem); opacity: .3; }
+  50% { -webkit-transform: translateX(0) rotate(80deg); opacity: 1; }
+  70% { -webkit-transform: rotate(0deg); }
+}
+@keyframes anime2-farmerHand {
+  0% { transform: translateX(-1.5rem); opacity: .3; }
+  50% { transform: translateX(0) rotate(80deg); opacity: 1; }
+  60% { transform: rotate(0deg); }
+}
+
+.anime-heart {
+  -webkit-animation: anime-heart .5s .3s both, anime-heart2 1s 1s linear infinite alternate;
+  animation: anime-heart .5s .3s both, anime-heart2 1s 1s linear infinite alternate;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+@-webkit-keyframes anime-heart {
+  0% { -webkit-transform: scale(0) translate(-4rem, -8rem); }
+  100% { opacity: 1; }
+}
+@keyframes anime-heart {
+  0% { transform: scale(0) translate(-4rem, -8rem); }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes anime-heart2 {
+  0% { opacity: 1; }
+  100% { -webkit-transform: rotate(-2deg); opacity: .5; }
+}
+@keyframes anime-heart2 {
+  0% { opacity: 1; }
+  100% { transform: rotate(-2deg); opacity: .5; }
+}
+
+
+/* page3 */
+.anime-fatBody {
+  -webkit-animation: anime-fatBody .5s, anime-fatBody2 .9s .6s infinite alternate;
+  animation: anime-fatBody .5s, anime-fatBody2 .9s .6s infinite alternate;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+@-webkit-keyframes anime-fatBody {
+  0% { -webkit-transform: rotate(-18deg) scale(1.4, 1.1) skewX(-12deg); }
+}
+@keyframes anime-fatBody {
+  0% { transform: rotate(-18deg) scale(1.4, 1.1) skewX(-12deg); }
+}
+@-webkit-keyframes anime-fatBody2 {
+  100% { -webkit-transform: rotate(-2deg) skew(1deg,-1deg); }
+}
+@keyframes anime-fatBody2 {
+  100% { transform: rotate(-2deg) skew(1deg,-1deg); }
+}
+
+.anime-fatHand {
+  -webkit-animation: anime-fatHand .5s, anime-fatHand2 .9s .6s infinite alternate;
+  animation: anime-fatHand .5s, anime-fatHand2 .9s .6s infinite alternate;
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+}
+@-webkit-keyframes anime-fatHand {
+  0% { -webkit-transform: rotate(-30deg) skewY(-20deg) scale(1.1,1.3) translate(-1rem,-0.5rem); }
+}
+@keyframes anime-fatHand {
+  0% { transform: rotate(-30deg) skewY(-20deg) scale(1.1,1.3) translate(-1rem,-0.5rem); }
+}
+@-webkit-keyframes anime-fatHand2 {
+  100% { -webkit-transform: rotate(5deg) translate(-0.1rem, 0.2rem); }
+}
+@keyframes anime-fatHand2 {
+  100% { transform: rotate(5deg) translate(-0.1rem, 0.2rem); }
+}
+
+.anime-fatHappy {
+  -webkit-animation: anime-fatHappy .5s, anime-fatHappy2 .9s .6s infinite alternate;
+  animation: anime-fatHappy .5s, anime-fatHappy2 .9s .6s infinite alternate;
+  -webkit-transform-origin: 130% 215%;
+  transform-origin: 130% 215%;
+}
+@-webkit-keyframes anime-fatHappy {
+  0% { -webkit-transform: rotate(-105deg) translate(0.8rem, -0.2rem); }
+}
+@keyframes anime-fatHappy {
+  0% { transform: rotate(-105deg) translate(0.8rem, -0.2rem); }
+}
+@-webkit-keyframes anime-fatHappy2 {
+  100% { -webkit-transform: rotate(-4deg) translateY(.02rem); }
+}
+@keyframes anime-fatHappy2 {
+  100% { transform: rotate(-4deg) translateY(.02rem); }
+}
+
+.anime-fatLight {
+  -webkit-animation: anime-fatLight .9s .6s infinite alternate;
+  animation: anime-fatLight .9s .6s infinite alternate;
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+}
+@-webkit-keyframes anime-fatLight {
+  0% { opacity: 0.5; }
+  100% { -webkit-transform: rotate(10deg) translate(-.12rem, -.04rem); opacity: 1; }
+}
+@keyframes anime-fatLight {
+  0% { opacity: 0.5; }
+  100% { transform: rotate(10deg) translate(-.12rem, -.04rem); opacity: 1; }
+}
+
+.anime3-girlHand {
+  -webkit-animation: anime3-girlHand .5s, anime3-girlHand2 1.2s .8s infinite alternate;
+  animation: anime3-girlHand .5s, anime3-girlHand2 1.2s .8s infinite alternate;
+}
+@-webkit-keyframes anime3-girlHand {
+  0% { -webkit-transform: skewX(8deg) translateY(0.1rem); }
+}
+@keyframes anime3-girlHand {
+  0% { transform: skewX(8deg) translateY(0.1rem); }
+}
+@-webkit-keyframes anime3-girlHand2 {
+  100% { -webkit-transform: rotate(-6deg); }
+}
+@keyframes anime3-girlHand2 {
+  100% { transform: rotate(-6deg); }
+}
+
+.anime3-girlHappy {
+  -webkit-animation: anime3-girlHappy .5s, anime3-girlHappy2 1.2s .8s infinite alternate;
+  animation: anime3-girlHappy .5s, anime3-girlHappy2 1.2s .8s infinite alternate;
+  -webkit-transform-origin: 25% 95%;
+  transform-origin: 25% 95%;
+}
+@-webkit-keyframes anime3-girlHappy {
+  0% { -webkit-transform: rotate(35deg); }
+}
+@keyframes anime3-girlHappy {
+  0% { transform: rotate(35deg); }
+}
+@-webkit-keyframes anime3-girlHappy2 {
+  100% { -webkit-transform: rotate(-5deg) translate(-.06rem, -.04rem); }
+}
+@keyframes anime3-girlHappy2 {
+  100% { transform: rotate(-5deg) translate(-.06rem, -.04rem); }
+}
+
+.anime3-girlLight {
+  -webkit-animation: anime3-girlLight 1.2s .8s infinite alternate;
+  animation: anime3-girlLight 1.2s .8s infinite alternate;
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+}
+@-webkit-keyframes anime3-girlLight {
+  0% { opacity: 0.3; }
+  100% { -webkit-transform: rotate(5deg) translate(-.1rem, .04rem); opacity: 1; }
+}
+@keyframes anime3-girlLight {
+  0% { opacity: 0.3; }
+  100% { transform: rotate(5deg) translate(-.1rem, .04rem); opacity: 1; }
+}
+
+.anime3-hpLeft {
+  -webkit-animation: anime3-hpLeft .5s;
+  animation: anime3-hpLeft .5s;
+  -webkit-transform-origin: right bottom;
+  transform-origin: right bottom;
+}
+@-webkit-keyframes anime3-hpLeft {
+  0% { -webkit-transform: rotate(-36deg) skewX(-25deg) translate(-0.2rem, 0.1rem); }
+}
+@keyframes anime3-hpLeft {
+  0% { transform: rotate(-36deg) skewX(-25deg) translate(-0.2rem, 0.1rem); }
+}
+
+.anime3-hpRight {
+  -webkit-animation: anime3-hpRight .5s;
+  animation: anime3-hpRight .5s;
+  -webkit-transform-origin: right top;
+  transform-origin: right top;
+}
+@-webkit-keyframes anime3-hpRight {
+  0% { -webkit-transform: rotate(-54deg) translate(-0.7rem, -0.85rem); }
+}
+@keyframes anime3-hpRight {
+  0% { transform: rotate(-54deg) translate(-0.7rem, -0.85rem); }
+}
+
+.anime3-boyLight {
+  -webkit-animation: anime3-boyLight .6s .5s infinite alternate;
+  animation: anime3-boyLight .6s .5s infinite alternate;
+}
+@-webkit-keyframes anime3-boyLight {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+@keyframes anime3-boyLight {
+  0% { opacity: 0.5; }
+  100% { opacity: 1; }
+}
+
+.anime3-farmer {
+  -webkit-animation: anime3-farmer .5s, anime3-farmer2 1.2s .8s linear infinite;
+  animation: anime3-farmer .5s, anime3-farmer2 1.2s .8s linear infinite;
+}
+@-webkit-keyframes anime3-farmer {
+  0% { -webkit-transform: translateY(1rem); opacity: 0; }
+}
+@keyframes anime3-farmer {
+  0% { transform: translateY(1rem); opacity: 0; }
+}
+@-webkit-keyframes anime3-farmer2 {
+  0%, 50%, 100% { -webkit-transform: rotate(0deg); }
+  25% { -webkit-transform: rotate(-2deg); }
+  75% { -webkit-transform: rotate(2deg); }
+}
+@keyframes anime3-farmer2 {
+  0%, 50%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-2deg); }
+  75% { transform: rotate(2deg); }
+}
+
+.anime3-farmerBox {
+  -webkit-animation: anime3-farmerBox .5s .1s both, anime3-farmerBox2 1.2s .8s linear infinite;
+  animation: anime3-farmerBox .5s .1s both, anime3-farmerBox2 1.2s .8s linear infinite;
+  -webkit-transform-origin: 20% 0;
+  transform-origin: 20% 0;
+}
+@-webkit-keyframes anime3-farmerBox {
+  0% { -webkit-transform: scaleY(0); opacity: 0; }
+  100% { opacity: 1; }
+}
+@keyframes anime3-farmerBox {
+  0% { transform: scaleY(0); opacity: 0; }
+  100% { opacity: 1; }
+}
+@-webkit-keyframes anime3-farmerBox2 {
+  0%, 50%, 100% { -webkit-transform: rotate(0deg); }
+  25% { -webkit-transform: rotate(-13deg); }
+  75% { -webkit-transform: rotate(13deg); }
+}
+@keyframes anime3-farmerBox2 {
+  0%, 50%, 100% { transform: rotate(0deg); }
+  25% { transform: rotate(-13deg); }
+  75% { transform: rotate(13deg); }
+}
+
+.anime3-boss {
+  -webkit-animation: anime3-boss .5s, anime3-boss2 .8s .6s infinite alternate;
+  animation: anime3-boss .5s, anime3-boss2 .8s .6s infinite alternate;
+  -webkit-transform-origin: left top;
+  transform-origin: left top;
+}
+@-webkit-keyframes anime3-boss {
+  0% { -webkit-transform: translateX(-1.5rem) rotate(20deg); opacity: 0; }
+}
+@keyframes anime3-boss {
+  0% { transform: translateX(-1.5rem) rotate(20deg); opacity: 0; }
+}
+@-webkit-keyframes anime3-boss2 {
+  100% { -webkit-transform: translateY(.06rem) rotate(-5deg); }
+}
+@keyframes anime3-boss2 {
+  100% { transform: translateY(.06rem) rotate(-5deg); }
+}
+
+.anime-gold {
+  -webkit-animation: anime-gold .5s, anime-gold2 1s .5s linear infinite alternate;
+  animation: anime-gold .5s, anime-gold2 1s .5s linear infinite alternate;
+  -webkit-transform-origin: left bottom;
+  transform-origin: left bottom;
+}
+@-webkit-keyframes anime-gold {
+  0% { -webkit-transform: scale(0.3) translate(-1rem, 3rem); }
+}
+@keyframes anime-gold {
+  0% { transform: scale(0.3) translate(-1rem, 3rem); }
+}
+@-webkit-keyframes anime-gold2 {
+  0% { opacity: 1; }
+  100% { -webkit-transform: translateX(.1rem) rotate(-2deg); opacity: .5; }
+}
+@keyframes anime-gold2 {
+  0% { opacity: 1; }
+  100% { transform: translateX(.1rem) rotate(-2deg); opacity: .5; }
+}
+
+
+/* page4 */
+.anime-banner {
+  -webkit-animation: anime-banner .8s infinite alternate;
+  animation: anime-banner .8s infinite alternate;
+}
+@-webkit-keyframes anime-banner {
+  0% { -webkit-transform: translateY(.15rem) rotate(2deg); }
+}
+@keyframes anime-banner {
+  0% { transform: translateY(.15rem) rotate(2deg); }
+}
+
+.anime-cloud {
+  -webkit-animation: anime-cloud .8s infinite alternate;
+  animation: anime-cloud .8s infinite alternate;
+}
+@-webkit-keyframes anime-cloud {
+  0% { -webkit-transform: translateY(.2rem); }
+}
+@keyframes anime-cloud {
+  0% { transform: translateY(.2rem); }
+}
