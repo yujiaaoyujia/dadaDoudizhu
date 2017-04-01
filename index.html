@@ -1,0 +1,429 @@
+<!doctype html>
+<html>
+<head>
+  <title>欢乐斗地主嗒嗒巴士赛</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="format-detection" content="telephone=no">
+  <meta name="msapplication-tap-highlight" content="no">
+
+  <link rel="stylesheet" href="css/base-debug.css?rev=3.0.68">
+  <link rel="stylesheet" href="css/ddb-ui.css?rev=3.0.069">
+  <link rel="stylesheet" href="css/anime.css?rev=3.0.069">
+  <script src="js/wjs-setrem.js?rev=2.2.1"></script>
+  <script src="js/ddblog.js?rev=1.0.2"></script>
+
+  <style>
+    /* 全局 */
+    html, body, #app { height: 100%; }
+    body { background: #1b2866 url(image/bg.jpg?t=109) center center repeat-x; background-size: 6.4rem 100%; }
+
+    /* 动画首页 */
+    #page-home { height: 100%; }
+    #page-home #ddzSwipe { height: 100%; }
+    .m-swipe .swipe-page { overflow: hidden; }
+    .m-swipe .swipe-page header { position: absolute; top: 0; bottom: 4.2rem; width: 100%; }
+    .m-swipe .swipe-page header > h1 { position: absolute; left: 0; right: 0; top: 50%; margin: -2.5rem auto 0; width: 5.84rem; height: 5rem; }
+    .m-swipe .swipe-page header .bftext { display: block; height: 100%; background: url(image/page0/bftext.png) center center no-repeat; background-size: contain; }
+    .m-swipe .swipe-page header > h2 { position: absolute; left: 0; right: 0; top: 50%; margin: -2.46rem auto 0; width: 5.65rem; height: 4.92rem; }
+    .m-swipe .swipe-page header .aftext { display: block; height: 100%; background: url(image/page0/aftext.png) center center no-repeat; background-size: contain; }
+    .m-swipe .swipe-page header > footer { position: absolute; right: 0; bottom: -.15rem; padding: .2rem; width: .59rem; height: .38rem; background: url(image/arrow.png) center center no-repeat; background-size: .59rem .38rem; z-index: 100; }
+    .m-swipe .swipe-page section { position: absolute; bottom: 0; left: -1rem; right: -1rem; height: 4.3rem; }
+
+    /* 页面0 */
+    .m-swipe .page0 {}
+    .m-swipe .page0 .bg { position: absolute; bottom: .2rem; left: 0; width: 32.88rem; height: 3.79rem; background: url(image/page0/bg.png) 1rem bottom repeat-x; background-size: 8.22rem 3.79rem; z-index: 0; }
+    .m-swipe .page0 .bus { position: absolute; bottom: 0; left: 0; right: 0; height: 4.22rem; background: url(image/page0/bus.png) center bottom no-repeat; background-size: 8.22rem 4.22rem; z-index: 1; }
+    .m-swipe .page0 .seat-back { position: absolute; bottom: 0; left: 50%; margin-left: -.35rem; width: 3.55rem; height: 2.64rem; background: url(image/page0/seat-back.png) center center no-repeat; background-size: contain; z-index: 2; }
+    .m-swipe .page0 .seat-front { position: absolute; bottom: 0; left: 50%; margin-left: -1.34rem; width: 4.15rem; height: 2.4rem; background: url(image/page0/seat-front.png) center center no-repeat; background-size: contain; z-index: 5; }
+    .m-swipe .page0 .person { position: absolute; bottom: 1.1rem; left: 50%; margin-left: -.2rem; width: 2.36rem; height: 2rem; background: url(image/page0/person.png) center center no-repeat; background-size: contain; z-index: 3; }
+    .m-swipe .page0 .farmer { position: absolute; bottom: 2rem; left: 50%; margin-left: -.2rem; width: 1.33rem; height: 1.66rem; background: url(image/page0/farmer.png) center center no-repeat; background-size: contain; z-index: 4; }
+    .m-swipe .page0 .boss { position: absolute; bottom: 3.2rem; left: 50%; margin-left: -3.8rem; width: 2.74rem; height: 2.7rem; background: url(image/page0/boss.png) center center no-repeat; background-size: contain; z-index: 4; }
+    .m-swipe .page0 .bean { position: absolute; bottom: .65rem; left: 50%; margin-left: -3.2rem; width: 6.19rem; height: 3.19rem; background: url(image/page0/bean.png) center center no-repeat; background-size: contain; z-index: 12; }
+    .m-swipe .page0 .boy { position: absolute; bottom: 0; left: 50%; margin-left: -2.4rem; width: 3.09rem; height: 2.05rem; background: url(image/page0/boy.png) center center no-repeat; background-size: contain; z-index: 5; }
+    .m-swipe .page0 .boy-sleep { position: absolute; bottom: 1.7rem; left: 50%; margin-left: -1.63rem; width: 1.21rem; height: 1.38rem; background: url(image/page0/boy-sleep.png) center center no-repeat; background-size: contain; z-index: 6; }
+    .m-swipe .page0 .boy-left { position: absolute; bottom: 0; left: 50%; margin-left: -2.18rem; width: .88rem; height: .36rem; background: url(image/page0/boy-left.png) center center no-repeat; background-size: contain; z-index: 7; }
+    .m-swipe .page0 .boy-right { position: absolute; bottom: 0; left: 50%; margin-left: -1.48rem; width: 1.47rem; height: .4rem; background: url(image/page0/boy-right.png) center center no-repeat; background-size: contain; z-index: 8; }
+    .m-swipe .page0 .boy-happy { position: absolute; bottom: 1.7rem; left: 50%; margin-left: -1.4rem; width: .98rem; height: 1.43rem; background: url(image/page0/boy-happy.png) center center no-repeat; background-size: contain; z-index: 9; }
+    .m-swipe .page0 .boy-light { position: absolute; bottom: .3rem; left: 50%; margin-left: -1.8rem; width: 1.46rem; height: 1.11rem; background: url(image/page0/boy-light.png) center center no-repeat; background-size: contain; z-index: 10; }
+    .m-swipe .page0 .girl { position: absolute; bottom: 0; left: 50%; margin-left: 1.1rem; width:1.59rem; height: 1.93rem; background: url(image/page0/girl.png) center center no-repeat; background-size: contain; z-index: 5; }
+    .m-swipe .page0 .girl-sad { position: absolute; bottom: 1.55rem; left: 50%; margin-left: 1.55rem; width: 1.13rem; height: 1.22rem; background: url(image/page0/girl-sad.png) center center no-repeat; background-size: contain; z-index: 6; }
+    .m-swipe .page0 .girl-hand { position: absolute; bottom: .1rem; left: 50%; margin-left: .9rem; width: 2rem; height: 1.87rem; background: url(image/page0/girl-hand.png) center center no-repeat; background-size: contain; z-index: 7; }
+    .m-swipe .page0 .girl-after { position: absolute; bottom: 0; left: 50%; margin-left: .42rem; width: 2.5rem; height: 2.14rem; background: url(image/page0/girl-after.png) center center no-repeat; background-size: contain; z-index: 8; }
+    .m-swipe .page0 .girl-happy { position: absolute; bottom: 1.68rem; left: 50%; margin-left: 1.15rem; width: 1.04rem; height: 1.27rem; background: url(image/page0/girl-happy.png) center center no-repeat; background-size: contain; z-index: 9; }
+    .m-swipe .page0 .girl-light { position: absolute; bottom: 1rem; left: 50%; margin-left: .82rem; width: 1.03rem; height: .85rem; background: url(image/page0/girl-light.png) center center no-repeat; background-size: contain; z-index: 10; }
+
+    /* 页面1 */
+    .m-swipe .page1 header {}
+    .m-swipe .page1 header > h1 { position: absolute; left: 0; right: 0; top: 50%; margin: -2.455rem auto 0; width: 5.56rem; height: 4.91rem; }
+    .m-swipe .page1 header .bftext { background-image: url(image/page1/bftext.png); }
+    .m-swipe .page1 header > h2 { position: absolute; left: 0; right: 0; top: 50%; margin: -2.46rem auto 0; width: 5.51rem; height: 4.92rem; }
+    .m-swipe .page1 header .aftext { background-image: url(image/page1/aftext.png); }
+    .m-swipe .page1 .cars { position: absolute; bottom: .7rem; left: 50%; margin-left: -2.2rem; width: 5.97rem; height: 3.51rem; background: url(image/page1/bg.png) center center no-repeat; background-size: contain; z-index: 0; }
+    .m-swipe .page1 .cars-cover { position: absolute; bottom: .7rem; left: 50%; margin-left: -2.9rem; width: 7rem; height: 3.51rem; background: rgba(0, 0, 0, .2); z-index: 1; }
+    .m-swipe .page1 .bus { position: absolute; bottom: 0; left: 0; right: 0; height: 4.29rem; background: url(image/page1/bus.png) center bottom no-repeat; background-size: 8.22rem 4.29rem; z-index: 2; }
+    .m-swipe .page1 .seat { position: absolute; bottom: 0; left: 50%; margin-left: -4rem; width: 6.08rem; height: 2.87rem; background: url(image/page1/seat.png) center center no-repeat; background-size: contain; z-index: 3; }
+    .m-swipe .page1 .farmer { position: absolute; bottom: .8rem; left: 50%; margin-left: 1.5rem; width: 1.61rem; height: 1.89rem; background: url(image/page1/farmer.png) center center no-repeat; background-size: contain; z-index: 1; }
+    .m-swipe .page1 .farmer-hand { position: absolute; bottom: .9rem; left: 50%; margin-left: 2.05rem; width: .45rem; height: .52rem; background: url(image/page1/farmer-hand.png) center center no-repeat; background-size: contain; opacity: 0; z-index: 3; }
+    .m-swipe .page1 .boss { position: absolute; bottom: 4.2rem; left: 50%; margin-left: -2.95rem; width: 1.71rem; height: 1.84rem; background: url(image/page1/boss.png) center center no-repeat; background-size: contain; z-index: 3; }
+    .m-swipe .page1 .gem { position: absolute; bottom: .3rem; left: 50%; margin-left: -1.25rem; width: 4.29rem; height: 4.49rem; background: url(image/page1/gem.png) center center no-repeat; background-size: contain; z-index: 10; }
+    .m-swipe .page1 .girl { position: absolute; bottom: 0; left: 50%; margin-left: -2.5rem; width:3.06rem; height: 2.28rem; background: url(image/page1/girl.png) center center no-repeat; background-size: contain; z-index: 5; }
+    .m-swipe .page1 .girl-agleft { position: absolute; bottom: .3rem; left: 50%; margin-left: -2.6rem; width: 1.15rem; height: 1.77rem; background: url(image/page1/girl-agleft.png) center center no-repeat; background-size: contain; z-index: 6; }
+    .m-swipe .page1 .girl-agright { position: absolute; bottom: 1.35rem; left: 50%; margin-left: -2.1rem; width: 1.33rem; height: 1.28rem; background: url(image/page1/girl-agright.png) center center no-repeat; background-size: contain; z-index: 4; }
+    .m-swipe .page1 .girl-angry { position: absolute; bottom: 1.75rem; left: 50%; margin-left: -2.45rem; width: .84rem; height: 1.38rem; background: url(image/page1/girl-angry.png) center center no-repeat; background-size: contain; z-index: 7; }
+    .m-swipe .page1 .girl-fire { position: absolute; bottom: 1.45rem; left: 50%; margin-left: -3rem; width: 1.53rem; height: 2.26rem; background: url(image/page1/girl-fire.png) center center no-repeat; background-size: contain; z-index: 8; }
+    .m-swipe .page1 .girl-fire2 { position: absolute; bottom: 2.35rem; left: 50%; margin-left: -2.85rem; width: 2.17rem; height: .94rem; background: url(image/page1/girl-fire2.png) center center no-repeat; background-size: contain; z-index: 8; }
+    .m-swipe .page1 .girl-hpleft { position: absolute; bottom: .55rem; left: 50%; margin-left: -2.6rem; width: 1.78rem; height: 1.51rem; background: url(image/page1/girl-hpleft.png) center center no-repeat; background-size: contain; z-index: 7; }
+    .m-swipe .page1 .girl-hpright { position: absolute; bottom: 1.15rem; left: 50%; margin-left: -1.5rem; width: .66rem; height: .85rem; background: url(image/page1/girl-hpright.png) center center no-repeat; background-size: contain; z-index: 4; }
+    .m-swipe .page1 .girl-happy { position: absolute; bottom: 1.67rem; left: 50%; margin-left: -2.5rem; width: .84rem; height: 1.38rem; background: url(image/page1/girl-happy.png) center center no-repeat; background-size: contain; z-index: 8; }
+    .m-swipe .page1 .girl-light { position: absolute; bottom: 1.75rem; left: 50%; margin-left: -1.88rem; width: 1.04rem; height: 1.14rem; background: url(image/page1/girl-light.png) center center no-repeat; background-size: contain; opacity: 0; z-index: 6; }
+    .m-swipe .page1 .woman { position: absolute; bottom: 0; left: 50%; margin-left: -.58rem; width: 3.18rem; height: 2.47rem; background: url(image/page1/woman.png) center center no-repeat; background-size: contain; z-index: 4; }
+    .m-swipe .page1 .woman-agleft { position: absolute; bottom: .66rem; left: 50%; margin-left: -.66rem; width: 1.03rem; height: 1.59rem; background: url(image/page1/woman-agleft.png) center center no-repeat; background-size: contain; z-index: 5; }
+    .m-swipe .page1 .woman-agright { position: absolute; bottom: 1.14rem; left: 50%; margin-left: 0; width: .92rem; height: 1.33rem; background: url(image/page1/woman-agright.png) center center no-repeat; background-size: contain; z-index: 3; }
+    .m-swipe .page1 .woman-angry { position: absolute; bottom: 2.34rem; left: 50%; margin-left: -.72rem; width: .95rem; height: .91rem; background: url(image/page1/woman-angry.png) center center no-repeat; background-size: contain; z-index: 5; }
+    .m-swipe .page1 .woman-fire { position: absolute; bottom: 3.2rem; left: 50%; margin-left: -.7rem; width: .83rem; height: .49rem; background: url(image/page1/woman-fire.png) center center no-repeat; background-size: contain; z-index: 5; }
+    .m-swipe .page1 .woman-hpleft { position: absolute; bottom: .98rem; left: 50%; margin-left: -.62rem; width: 1.41rem; height: 1.32rem; background: url(image/page1/woman-hpleft.png) center center no-repeat; background-size: contain; z-index: 6; }
+    .m-swipe .page1 .woman-hpright { position: absolute; bottom: 1.28rem; left: 50%; margin-left: -.02rem; width: .92rem; height: 1.18rem; background: url(image/page1/woman-hpright.png) center center no-repeat; background-size: contain; z-index: 3; }
+    .m-swipe .page1 .woman-happy { position: absolute; bottom: 2.35rem; left: 50%; margin-left: -.7rem; width: .95rem; height: .91rem; background: url(image/page1/woman-happy.png) center center no-repeat; background-size: contain; z-index: 5; }
+    .m-swipe .page1 .woman-light { position: absolute; bottom: 2.05rem; left: 50%; margin-left: -.18rem; width: 1.03rem; height: 1.34rem; background: url(image/page1/woman-light.png) center center no-repeat; background-size: contain; opacity: 0; z-index: 5; }
+
+
+    /* 页面2 */
+    .m-swipe .page2 header {}
+    .m-swipe .page2 header > h1 { position: absolute; left: 0; right: 0; top: 50%; margin: -2.455rem auto 0; width: 5.83rem; height: 4.91rem; }
+    .m-swipe .page2 header .bftext { background-image: url(image/page2/bftext.png); }
+    .m-swipe .page2 header > h2 { position: absolute; left: 0; right: 0; top: 50%; margin: -2.455rem auto 0; width: 5.71rem; height: 4.91rem; }
+    .m-swipe .page2 header .aftext { background-image: url(image/page2/aftext.png); }
+    .m-swipe .page2 .bg { position: absolute; bottom: 0; left: 0; width: 32.88rem; height: 4.02rem; background: url(image/page2/bg.png) 1rem bottom repeat-x; background-size: 8.22rem 4.02rem; z-index: 0; }
+    .m-swipe .page2 .bus-back { position: absolute; bottom: 0; left: 0; right: 0; height: 3.88rem; background: url(image/page2/bus-back.png) center bottom no-repeat; background-size: 7.19rem 3.88rem; z-index: 1; }
+    .m-swipe .page2 .bus-front { position: absolute; bottom: 0; left: 0; right: 0; height: 4.25rem; background: url(image/page2/bus-front.png) center bottom no-repeat; background-size: 7.19rem 4.25rem; z-index: 14; }
+    .m-swipe .page2 .tyre { position: absolute; bottom: -.9rem; left: 50%; margin-left: -2.88rem; width: 1.46rem; height: 1.46rem; background: url(image/page2/tyre.png) center center no-repeat; background-size: contain; z-index: 15; }
+    .m-swipe .page2 .tyre.tyre-right { margin-left: 1.46rem; }
+    .m-swipe .page2 .boss { position: absolute; bottom: .65rem; left: 50%; margin-left: 2.3rem; width: 1.22rem; height: 1.63rem; background: url(image/page2/boss.png) center center no-repeat; background-size: contain; z-index: 12; }
+    .m-swipe .page2 .boss-happy { position: absolute; bottom: .75rem; left: 50%; margin-left: .35rem; width: 1.51rem; height: 1.73rem; background: url(image/page2/boss-happy.png) center center no-repeat; background-size: contain; z-index: 13; }
+    .m-swipe .page2 .farmer { position: absolute; bottom: 4.1rem; left: 50%; margin-left: -2.6rem; width: 1.2rem; height: 1.5rem; background: url(image/page2/farmer.png) center center no-repeat; background-size: contain; z-index: 16; }
+    .m-swipe .page2 .farmer-hand { position: absolute; bottom: 4.55rem; left: 50%; margin-left: -2.25rem; width: .23rem; height: .23rem; background: url(image/page2/farmer-hand.png) center center no-repeat; background-size: contain; z-index: 18; }
+    .m-swipe .page2 .farmer-heart { position: absolute; bottom: 4.65rem; left: 50%; margin-left: -2.3rem; width: .38rem; height: .34rem; background: url(image/page2/farmer-heart.png) center center no-repeat; background-size: contain; z-index: 17; }
+    .m-swipe .page2 .heart { position: absolute; bottom: .25rem; left: 50%; margin-left: -2rem; width: 4.09rem; height: 3.46rem; background: url(image/page2/heart.png) center center no-repeat; background-size: contain; opacity: 0; z-index: 17; }
+    .m-swipe .page2 .kid { position: absolute; bottom: .52rem; left: 50%; margin-left: -1.5rem; width: 2.07rem; height: 2.04rem; background: url(image/page2/kid.png) center center no-repeat; background-size: contain; z-index: 2; }
+    .m-swipe .page2 .kid-happy { position: absolute; bottom: .52rem; left: 50%; margin-left: -.5rem; width: 1.12rem; height: 1.72rem; background: url(image/page2/kid-happy.png) center center no-repeat; background-size: contain; z-index: 2; }
+    .m-swipe .page2 .kid-hand { position: absolute; bottom: .82rem; left: 50%; margin-left: -1.6rem; width: 1.78rem; height: 1.11rem; background: url(image/page2/kid-hand.png) center center no-repeat; background-size: contain; z-index: 3; }
+    .m-swipe .page2 .kid-head { position: absolute; bottom: 2.02rem; left: 50%; margin-left: -.8rem; width: .62rem; height: .72rem; background: url(image/page2/kid-head.png) center center no-repeat; background-size: contain; z-index: 4; }
+    .m-swipe .page2 .kid-light { position: absolute; bottom: 1.52rem; left: 50%; margin-left: -1.5rem; width: .77rem; height: .83rem; background: url(image/page2/kid-light.png) center center no-repeat; background-size: contain; opacity: 0; z-index: 5; }
+    .m-swipe .page2 .boy { position: absolute; bottom: .6rem; left: 50%; margin-left: -.75rem; width: 2.27rem; height: 2.18rem; background: url(image/page2/boy.png) center center no-repeat; background-size: contain; z-index: 6; }
+    .m-swipe .page2 .boy-happy { position: absolute; bottom: .55rem; left: 50%; margin-left: .15rem; width: 1.42rem; height: 1.83rem; background: url(image/page2/boy-happy.png) center center no-repeat; background-size: contain; z-index: 6; }
+    .m-swipe .page2 .boy-hand { position: absolute; bottom: .85rem; left: 50%; margin-left: -.8rem; width: 1.83rem; height: 1.22rem; background: url(image/page2/boy-hand.png) center center no-repeat; background-size: contain; z-index: 7; }
+    .m-swipe .page2 .boy-head { position: absolute; bottom: 2.08rem; left: 50%; margin-left: -0.02rem; width: .67rem; height: .74rem; background: url(image/page2/boy-head.png) center center no-repeat; background-size: contain; z-index: 8; }
+    .m-swipe .page2 .boy-light { position: absolute; bottom: 1.55rem; left: 50%; margin-left: -.7rem; width: .91rem; height: .84rem; background: url(image/page2/boy-light.png) center center no-repeat; background-size: contain; opacity: 0; z-index: 8; }
+
+    /* 页面3 */
+    .m-swipe .page3 header {}
+    .m-swipe .page3 header > h1 { position: absolute; left: 0; right: 0; top: 50%; margin: -2.455rem auto 0; width: 5.9rem; height: 4.91rem; }
+    .m-swipe .page3 header .bftext { background-image: url(image/page3/bftext.png); }
+    .m-swipe .page3 header > h2 { position: absolute; left: 0; right: 0; top: 50%; margin: -2.46rem auto 0; width: 5.66rem; height: 4.92rem; }
+    .m-swipe .page3 header .aftext { background-image: url(image/page3/aftext.png); }
+    .m-swipe .page3 .bg { position: absolute; bottom: 0; left: 0; width: 32.88rem; height: 4.02rem; background: url(image/page2/bg.png) 1rem bottom repeat-x; background-size: 8.22rem 4.02rem; z-index: 1; }
+    .m-swipe .page3 .bus { position: absolute; bottom: 0; left: 0; right: 0; height: 4.11rem; background: url(image/page3/bus.png) center bottom no-repeat; background-size: 8.22rem 4.11rem; z-index: 2; }
+    .m-swipe .page3 .seat { position: absolute; bottom: 0; left: 50%; margin-left: -.6rem; width: 2.81rem; height: 2.76rem; background: url(image/page3/seat.png) center center no-repeat; background-size: contain; z-index: 7; }
+    .m-swipe .page3 .boss { position: absolute; bottom: 0; left: 50%; margin-left: -3rem; width: 1.52rem; height: 1.98rem; background: url(image/page3/boss.png) center center no-repeat; background-size: contain; z-index: 9; }
+    .m-swipe .page3 .farmer { position: absolute; bottom: 3.6rem; left: 50%; margin-left: .6rem; width: 1.54rem; height: 1.93rem; background: url(image/page3/farmer.png) center center no-repeat; background-size: contain; z-index: 0; }
+    .m-swipe .page3 .farmer-box { position: absolute; bottom: 3.8rem; left: 50%; margin-left: 1.45rem; width: .5rem; height: .56rem; background: url(image/page3/farmer-box.png) center center no-repeat; background-size: contain; z-index: 3; }
+    .m-swipe .page3 .gold { position: absolute; bottom: .7rem; left: 50%; margin-left: -2.24rem; width: 3.73rem; height: 3.16rem; background: url(image/page3/gold.png) center center no-repeat; background-size: contain; z-index: 13; }
+    .m-swipe .page3 .fat { position: absolute; bottom: -.95rem; left: 50%; margin-left: -1.7rem; width: 3.32rem; height: 3.51rem; background: url(image/page3/fat.png) center center no-repeat; background-size: contain; z-index: 8; }
+    .m-swipe .page3 .fat-body { position: absolute; bottom: 0; left: 50%; margin-left: -1.12rem; width: 2.79rem; height: 2.78rem; background: url(image/page3/fat-body.png) center center no-repeat; background-size: contain; z-index: 9; }
+    .m-swipe .page3 .fat-hand { position: absolute; bottom: 1.16rem; left: 50%; margin-left: -1.8rem; width: 2.72rem; height: 1.51rem; background: url(image/page3/fat-hand.png) center center no-repeat; background-size: contain; z-index: 10; }
+    .m-swipe .page3 .fat-happy { position: absolute; bottom: 2.5rem; left: 50%; margin-left: -.74rem; width: .92rem; height: .86rem; background: url(image/page3/fat-happy.png) center center no-repeat; background-size: contain; z-index: 11; }
+    .m-swipe .page3 .fat-light { position: absolute; bottom: 2.05rem; left: 50%; margin-left: -1.74rem; width: .98rem; height: 1.03rem; background: url(image/page3/fat-light.png) center center no-repeat; background-size: contain; opacity: 0; z-index: 12; }
+    .m-swipe .page3 .girl { position: absolute; bottom: 0; left: 50%; margin-left: .3rem; width: 1.91rem; height: 3.16rem; background: url(image/page3/girl.png) center center no-repeat; background-size: contain; z-index: 3; }
+    .m-swipe .page3 .girl-hand { position: absolute; bottom: 0; left: 50%; margin-left: .34rem; width: 1.4rem; height: 3.17rem; background: url(image/page3/girl-hand.png) center center no-repeat; background-size: contain; z-index: 4; }
+    .m-swipe .page3 .girl-happy { position: absolute; bottom: 2.48rem; left: 50%; margin-left: 1.08rem; width: .84rem; height: .95rem; background: url(image/page3/girl-happy.png) center center no-repeat; background-size: contain; z-index: 5; }
+    .m-swipe .page3 .girl-light { position: absolute; bottom: 2.78rem; left: 50%; margin-left: .5rem; width: .73rem; height: .77rem; background: url(image/page3/girl-light.png) center center no-repeat; background-size: contain; opacity: 0; z-index: 6; }
+    .m-swipe .page3 .boy { position: absolute; bottom: -.94rem; left: 50%; margin-left: 2.1rem; width: 2.56rem; height: 4.07rem; background: url(image/page3/boy.png) center center no-repeat; background-size: contain; z-index: 8; }
+    .m-swipe .page3 .boy-left { position: absolute; bottom: .16rem; left: 50%; margin-left: 2rem; width: 2.01rem; height: 2.32rem; background: url(image/page3/boy-left.png) center center no-repeat; background-size: contain; z-index: 9; }
+    .m-swipe .page3 .boy-right { position: absolute; bottom: .48rem; left: 50%; margin-left: 2.2rem; width: 1.24rem; height: 1.04rem; background: url(image/page3/boy-right.png) center center no-repeat; background-size: contain; z-index: 7; }
+    .m-swipe .page3 .boy-happy { position: absolute; bottom: 0; left: 50%; margin-left: 2.18rem; width: 1.9rem; height: 3.22rem; background: url(image/page3/boy-happy.png) center center no-repeat; background-size: contain; z-index: 8; }
+    .m-swipe .page3 .boy-hpleft { position: absolute; bottom: .9rem; left: 50%; margin-left: 2.3rem; width: 1.71rem; height: 1.65rem; background: url(image/page3/boy-hpleft.png) center center no-repeat; background-size: contain; z-index: 9; }
+    .m-swipe .page3 .boy-hpright { position: absolute; bottom: 1.06rem; left: 50%; margin-left: 2.6rem; width: 1.44rem; height: .72rem; background: url(image/page3/boy-hpright.png) center center no-repeat; background-size: contain; z-index: 7; }
+    .m-swipe .page3 .boy-light { position: absolute; bottom: 1.6rem; left: 50%; margin-left: 2.3rem; width: 1.03rem; height: 1.19rem; background: url(image/page3/boy-light.png) center center no-repeat; background-size: contain; opacity: 0; z-index: 8; }
+
+    /* 页面4 */
+    .m-swipe .page4 { }
+    .m-swipe .page4 .container { position: relative; width: 100%; height: 100%; background: url(image/page4/bg.png) center center repeat-y; background-size: 100% .3rem; overflow: auto; -webkit-overflow-scrolling : touch; }
+    .m-swipe .page4 .container .banner { display: block; position: relative; width: 100%; }
+    .m-swipe .page4 .container .banner > img { display: block; width: 100%; }
+    .m-swipe .page4 .container .title { position: absolute; top: .05rem; left: .2rem; width: 4.31rem; height: 2.26rem; background: url(image/page4/title.png) center center no-repeat; background-size: contain; }
+    .m-swipe .page4 .container .cloud { position: absolute; top: 1.55rem; left: 1.2rem; width: 3.19rem; height: 1.19rem; background: url(image/page4/cloud.png) center center no-repeat; background-size: contain; }
+    .m-swipe .page4 .container .logo { position: absolute; bottom: 2.1rem; left: .26rem; }
+    .m-swipe .page4 .container .logo::before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 1.12rem; height: .68rem; background: url(image/page4/doudizhu.png) center center no-repeat; background-size: contain; }
+    .m-swipe .page4 .container .logo::after { content: ''; display: block; position: absolute; top: .25rem; left: 1.3rem; width: 1.57rem; height: .38rem; background: url(image/page4/logo.png) center center no-repeat; background-size: contain; }
+    .m-swipe .page4 .container .panel::before { content: ''; position: absolute; top: -.3rem; left: 0; right: 0; height: .3rem; background: url(image/page4/panel-top.png) center center no-repeat; background-size: 100% .3rem; }
+    .m-swipe .page4 .container .panel::after { content: ''; position: absolute; bottom: -.3rem; left: 0; right: 0; height: .3rem; background: url(image/page4/panel-bottom.png) center center no-repeat; background-size: 100% .3rem; }
+    .m-swipe .page4 .container .panel { position: relative; margin: -.8rem .24rem 0; padding: .1rem .2rem 0; background: url(image/page4/panel.png) center center repeat-y; background-size: 100% .3rem; }
+    .m-swipe .page4 .container .panel > h2 { margin: 0 auto; padding-top: .58rem; width: 100%; height: .26rem; background: url(image/page4/rule.png) center top no-repeat; background-size: 1.47rem .36rem; }
+    .m-swipe .page4 .container .panel > h2::after { content: ''; display: block; margin: 0 auto; width: 5.35rem; height: .05rem; background: url(image/page4/line.png) center center no-repeat; background-size: contain; }
+    .m-swipe .page4 .dl-list {}
+    .m-swipe .page4 .dl-list > dt { position: relative; margin: .14rem 0 .08rem; height: .26rem; line-height: .26rem; font-size: .24rem; color: #882628; font-weight: bold; }
+    .m-swipe .page4 .dl-list > dt > i { margin-right: .15rem; font-size: .24rem; font-weight: normal; }
+    .m-swipe .page4 .dl-list > dd { padding-left: .38rem; line-height: .4rem; font-size: .24rem; }
+    .m-swipe .page4 .dl-list > dd > p { margin-left: .2rem; }
+    .m-swipe .page4 .dl-list > dd span { color: #882628; }
+    .m-swipe .page4 .container .panel .tip { display: block; margin: .85rem .2rem .25rem; line-height: .28rem; font-size: .18rem; text-align: center; color: #882628; }
+    .m-swipe .page4 .container .panel .faq { display: block; margin: 0 auto; line-height: .18rem; font-size: .18rem; text-align: center; color: #882628; }
+    .m-swipe .page4 .container .panel > h4 { display: block; margin: 0 auto; line-height: .4rem; font-size: .2rem; text-align: center; color: #882628; font-weight: bold; letter-spacing: 0; }
+    .m-swipe .page4 .container .panel > h4 > a { color: #882628; }
+    .m-swipe .page4 .container > footer { width: 100%; margin-top: .3rem; padding: .4rem 0 .3rem; }
+    .m-swipe .page4 .container > footer > a { display: block; width: 2.68rem; height: .7rem; line-height: .7rem; font-size: .24rem; background: url(image/page4/button.png) center center no-repeat; background-size: contain; text-align: center; color: #551100; }
+    .m-swipe .page4 .container > footer > a:first-child { float: left; margin-left: .3rem; }
+    .m-swipe .page4 .container > footer > a:last-child { float: right; margin-right: .3rem; }
+    .m-swipe .page4 .container > footer::after { content: ''; display: block; clear: both; margin: 0 auto; padding-top: .6rem; width: 1.72rem; height: .31rem; background: url(image/page4/footer.png) center bottom no-repeat; background-size: contain; }
+
+  </style>
+</head>
+<body>
+<!-- 根组件 -->
+<article id="app">
+  <keep-alive>
+    <component :is="view"></component>
+  </keep-alive>
+</article>
+
+<!-- 动画首页 -->
+<script type="text/x-template" id="template-home">
+  <article id="page-home">
+    <section id='ddzSwipe' class='m-swipe'>
+      <div class="m-swipe-wrap">
+        <!-- 页面0 -->
+        <div class="swipe-page page0" data-index="0">
+          <header>
+            <h1 :class="{'anime-zoomOut': animePlay[0]}">
+              <span class="bftext anime-title"></span>
+            </h1>
+            <h2 v-show="animePlay[0]" class="anime-zoomIn">
+              <span class="aftext anime-titleAct"></span>
+            </h2>
+            <footer class="anime-arrow allow" @click="swipePage(1)"></footer>
+          </header>
+          <section class="anime-shake">
+            <div class="bg anime-bgMove"></div>
+            <div class="bus"></div>
+            <div class="seat-back"></div>
+            <div class="seat-front"></div>
+
+            <p class="person"></p>
+            <p v-show="animePlay[0]" class="farmer anime-farmer"></p>
+            <p v-show="animePlay[0]" class="boss anime-boss"></p>
+            <span v-show="animePlay[0]" class="bean anime-bean"></span>
+            <p class="boy"></p>
+            <p class="boy-sleep" :class="{'anime-fadeOut': animePlay[0]}"></p>
+            <p v-show="animePlay[0]" class="boy-left anime-boyLeft"></p>
+            <p v-show="animePlay[0]" class="boy-right anime-boyRight"></p>
+            <p v-show="animePlay[0]" class="boy-happy anime-boyHappy"></p>
+            <span v-show="animePlay[0]" class="boy-light anime-boyLight"></span>
+
+            <p class="girl" :class="{'anime-fadeOut': animePlay[0]}"></p>
+            <p class="girl-sad" :class="{'anime-fadeOut': animePlay[0]}"></p>
+            <p class="girl-hand" :class="{'anime-fadeOut': animePlay[0]}"></p>
+            <p v-show="animePlay[0]" class="girl-after anime-girl"></p>
+            <p v-show="animePlay[0]" class="girl-happy anime-girlHappy"></p>
+            <span v-show="animePlay[0]" class="girl-light anime-girlLight"></span>
+          </section>
+        </div>
+
+        <!-- 页面1 -->
+        <div class="swipe-page page1" data-index="1">
+          <header>
+            <h1 :class="{'anime-zoomOut': animePlay[1]}">
+              <span class="bftext anime-title"></span>
+            </h1>
+            <h2 v-show="animePlay[1]" class="anime-zoomIn">
+              <span class="aftext anime-titleAct"></span>
+            </h2>
+            <footer class="anime-arrow allow" @click="swipePage(1)"></footer>
+          </header>
+          <section class="anime-shake">
+            <div class="cars anime-cars"></div>
+            <div v-show="animePlay[1]" class="cars-cover anime-fadeIn"></div>
+            <div class="bus"></div>
+            <div class="seat"></div>
+            <p v-show="animePlay[1]" class="farmer anime1-farmer"></p>
+            <p v-show="animePlay[1]" class="farmer-hand anime1-farmerHand"></p>
+            <p v-show="animePlay[1]" class="boss anime1-boss"></p>
+            <span v-show="animePlay[1]" class="gem anime-gem"></span>
+
+            <p class="girl"></p>
+            <p class="girl-agleft" :class="{'anime-fadeOut': animePlay[1]}"></p>
+            <p class="girl-agright" :class="{'anime-fadeOut': animePlay[1]}"></p>
+            <p class="girl-angry" :class="{'anime-fadeOut': animePlay[1]}"></p>
+            <span class="girl-fire" :class="{'anime-fire': !animePlay[1], 'anime-fadeOut': animePlay[1]}"></span>
+            <span class="girl-fire2" :class="{'anime-fire': !animePlay[1], 'anime-fadeOut': animePlay[1]}"></span>
+
+            <p v-show="animePlay[1]" class="girl-hpleft anime1-girlLeft"></p>
+            <p v-show="animePlay[1]" class="girl-hpright anime1-girlRight"></p>
+            <p v-show="animePlay[1]" class="girl-happy anime1-girlHappy"></p>
+            <span v-show="animePlay[1]" class="girl-light anime1-girlLight"></span>
+
+            <p class="woman" :class="{'anime1-woman': animePlay[1]}"></p>
+            <p class="woman-agleft" :class="{'anime-fadeOut': animePlay[1]}"></p>
+            <p class="woman-agright" :class="{'anime-fadeOut': animePlay[1]}"></p>
+            <p class="woman-angry" :class="{'anime-fadeOut': animePlay[1]}"></p>
+            <span class="woman-fire" :class="{'anime-blaze': !animePlay[1], 'anime-fadeOut': animePlay[1]}"></span>
+
+            <p v-show="animePlay[1]" class="woman-hpleft anime1-womanLeft"></p>
+            <p v-show="animePlay[1]" class="woman-hpright anime-fadeIn"></p>
+            <p v-show="animePlay[1]" class="woman-happy anime1-womanHappy"></p>
+            <span v-show="animePlay[1]" class="woman-light anime1-womanLight"></span>
+          </section>
+        </div>
+
+        <!-- 页面2 -->
+        <div class="swipe-page page2" data-index="2">
+          <header>
+            <h1 :class="{'anime-zoomOut': animePlay[2]}">
+              <span class="bftext anime-title"></span>
+            </h1>
+            <h2 v-show="animePlay[2]" class="anime-zoomIn">
+              <span class="aftext anime-titleAct"></span>
+            </h2>
+            <footer class="anime-arrow allow" @click="swipePage(1)"></footer>
+          </header>
+          <section class="anime-shake">
+            <div class="bg anime-bgMove"></div>
+            <div class="bus-back"></div>
+            <div class="bus-front"></div>
+            <span class="tyre anime-tyre"></span>
+            <span class="tyre tyre-right anime-tyre"></span>
+            <p class="boss" :class="{'anime-fadeOut': animePlay[2]}"></p>
+            <p v-show="animePlay[2]" class="boss-happy anime2-boss"></p>
+            <p v-show="animePlay[2]" class="farmer anime2-farmer"></p>
+            <p v-show="animePlay[2]" class="farmer-hand anime2-farmerHand"></p>
+            <span v-show="animePlay[2]" class="farmer-heart anime2-farmerHand"></span>
+            <span v-show="animePlay[2]" class="heart anime-heart"></span>
+
+            <p class="kid" :class="{'anime-fadeOut': animePlay[2]}"></p>
+            <p v-show="animePlay[2]" class="kid-happy"></p>
+            <p v-show="animePlay[2]" class="kid-hand anime-kidHand"></p>
+            <p v-show="animePlay[2]" class="kid-head anime-kidHead"></p>
+            <span v-show="animePlay[2]" class="kid-light anime-kidLight"></span>
+
+            <p class="boy" :class="{'anime-fadeOut': animePlay[2]}"></p>
+            <p v-show="animePlay[2]" class="boy-happy"></p>
+            <p v-show="animePlay[2]" class="boy-hand anime2-boyHand"></p>
+            <p v-show="animePlay[2]" class="boy-head anime2-boyHead"></p>
+            <span v-show="animePlay[2]" class="boy-light anime2-boyLight"></span>
+          </section>
+        </div>
+
+        <!-- 页面3 -->
+        <div class="swipe-page page3" data-index="3">
+          <header>
+            <h1 :class="{'anime-zoomOut': animePlay[3]}">
+              <span class="bftext anime-title"></span>
+            </h1>
+            <h2 v-show="animePlay[3]" class="anime-zoomIn">
+              <span class="aftext anime-titleAct"></span>
+            </h2>
+            <footer class="anime-arrow allow" @click="swipePage(1)"></footer>
+          </header>
+          <section class="anime-shake">
+            <div class="bg anime-bgMove"></div>
+            <div class="bus"></div>
+            <div class="seat"></div>
+            <p v-show="animePlay[3]" class="boss anime3-boss"></p>
+            <p v-show="animePlay[3]" class="farmer anime3-farmer"></p>
+            <p v-show="animePlay[3]" class="farmer-box anime3-farmerBox"></p>
+            <span v-show="animePlay[3]" class="gold anime-gold"></span>
+
+            <p class="fat" :class="{'anime-fadeOut': animePlay[3]}"></p>
+            <p v-show="animePlay[3]" class="fat-body anime-fatBody"></p>
+            <p v-show="animePlay[3]" class="fat-hand anime-fatHand"></p>
+            <p v-show="animePlay[3]" class="fat-happy anime-fatHappy"></p>
+            <span v-show="animePlay[3]" class="fat-light anime-fatLight"></span>
+
+            <p class="girl" :class="{'anime-fadeOut': animePlay[3]}"></p>
+            <p v-show="animePlay[3]" class="girl-hand anime3-girlHand"></p>
+            <p v-show="animePlay[3]" class="girl-happy anime3-girlHappy"></p>
+            <span v-show="animePlay[3]" class="girl-light anime3-girlLight"></span>
+
+            <p class="boy" :class="{'anime-fadeOut': animePlay[3]}"></p>
+            <p class="boy-left" :class="{'anime-fadeOut': animePlay[3]}"></p>
+            <p class="boy-right" :class="{'anime-fadeOut': animePlay[3]}"></p>
+            <p v-show="animePlay[3]" class="boy-happy anime-fadeIn"></p>
+            <p v-show="animePlay[3]" class="boy-hpleft anime3-hpLeft"></p>
+            <p v-show="animePlay[3]" class="boy-hpright anime3-hpRight"></p>
+            <span v-show="animePlay[3]" class="boy-light anime3-boyLight"></span>
+          </section>
+        </div>
+
+        <!-- 页面4 -->
+        <div class="swipe-page page4" data-index="4">
+          <div class="container">
+            <div class="banner">
+              <img src="image/page4/banner.png?t=103" />
+              <h2 class="title anime-banner"></h2>
+              <p class="cloud anime-cloud"></p>
+              <i class="logo"></i>
+            </div>
+            <div class="panel">
+              <h2></h2>
+              <dl class="dl-list">
+                <dt><i>①</i>活动时间：</dt>
+                <dd>4月10日-5月10日。</dd>
+
+                <dt><i>②</i>活动入口：</dt>
+                <dd>嗒嗒巴士车内专属活动二维码入口。</dd>
+
+                <dt><i>③</i>赛事规则：</dt>
+                <dd>
+                  每日4场赛事，提前10分钟候赛，每场持续时间20分钟。各赛事开始时间分别为：
+                  <p>第一场：7:20开始候赛，7:30开始；</p>
+                  <p>第二场：8:00开始候赛，8:10开始；</p>
+                  <p>第三场：18:20开始候赛，18:30开始；</p>
+                  <p>第四场：19:00开始候赛，19:10开始；</p>
+                </dd>
+
+                <dt><i>④</i>奖品设置：</dt>
+                <dd>
+                  (1)周一到周四优胜者：
+                  <p>每场比赛第一名获得嗒嗒巴士10元无门槛上下班代金券1张；</p>
+                  <p>每场比赛第二名获得嗒嗒巴士5元无门槛下班线代金券1张；</p>
+                  <p>每场比赛第三名获得嗒嗒巴士2元无门槛下班线代金券1张；</p>
+                </dd>
+                <dd>
+                  (2)周五超级福利日：
+                  <p>每场比赛第一名获得嗒嗒巴士提供的演出赛事/电影票1张。</p>
+                </dd>
+
+                <dt><i>⑤</i>奖品发放规则：</dt>
+                <dd>
+                  (1)活动结束后由嗒嗒巴士统一发放。<br>
+                  (2)进入赛事前需前往赛事领取页面——
+                  <p><span>游戏人生</span>移动端的我的物品页面，填写地址+手机号，如未填写，则后续奖品无法发放给您，该后果自行承担。</p>
+                </dd>
+              </dl>
+              <sub class="tip">本次活动由欢乐斗地主和嗒嗒巴士联合举办，所有解释权归欢乐斗地主和嗒嗒巴士所有。</sub>
+              <sub class="faq">如有疑问，可电话咨询客服。</sub>
+              <h4>客服电话：<a data-mtaid="dadaddz.detail.touch-tel">****-********</a></h4>
+            </div>
+
+            <footer>
+              <a @click="downloadDDZ" data-mtaid="dadaddz.detail.down-ddz">点击下载欢乐斗地主</a>
+              <a @click="downloadDadabus" data-mtaid="dadaddz.detail.down-dadabus">点击下载嗒嗒巴士</a>
+            </footer>
+          </div>
+        </div>
+      </div>
+    </section>
+  </article>
+</script>
+
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="js/vue.js?rev=3.0.06"></script>
+<script src="js/zepto.js?rev=3.0.06"></script>
+<script src="js/base.js?rev=3.0.17"></script>
+<script src='js/swipe.js?rev=3.0.06'></script>
+<script src='js/touchjs.js?rev=3.0.06'></script>
+
+<script src='js/main.js?rev=3.0.17'></script>
+</body>
+</html>
