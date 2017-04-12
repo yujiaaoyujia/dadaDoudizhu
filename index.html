@@ -1,16 +1,16 @@
 <!doctype html>
 <html>
 <head>
-  <title>欢乐斗地主嗒嗒巴士赛</title>
+  <title>欢乐斗地主巴士赛，开心上下班</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="format-detection" content="telephone=no">
   <meta name="msapplication-tap-highlight" content="no">
 
-  <link rel="stylesheet" href="css/base-debug.css?rev=3.0.68">
-  <link rel="stylesheet" href="css/ddb-ui.css?rev=3.0.069">
-  <link rel="stylesheet" href="css/anime.css?rev=3.0.069">
+  <link rel="stylesheet" href="css/base-debug.css?rev=3.0.70">
+  <link rel="stylesheet" href="css/ddb-ui.css?rev=3.0.070">
+  <link rel="stylesheet" href="css/anime.css?rev=3.0.070">
   <script src="js/wjs-setrem.js?rev=2.2.1"></script>
   <script src="js/ddblog.js?rev=1.0.2"></script>
 
@@ -18,6 +18,9 @@
     /* 全局 */
     html, body, #app { height: 100%; }
     body { background: #1b2866 url(image/bg.jpg?t=109) center center repeat-x; background-size: 6.4rem 100%; }
+    #bgmusic { display: none; opacity: 0; }
+    #bgm-switch { display: block; position: fixed; top: 0; right: 0; width: 1rem; height: 1rem; background: url(image/note.png) center center no-repeat; background-size: .46rem .55rem; z-index: 100; }
+    #bgm-switch.paused { background-image: url(image/mute.png); }
 
     /* 动画首页 */
     #page-home { height: 100%; }
@@ -153,7 +156,7 @@
     .m-swipe .page4 .container .banner { display: block; position: relative; width: 100%; }
     .m-swipe .page4 .container .banner > img { display: block; width: 100%; }
     .m-swipe .page4 .container .title { position: absolute; top: .05rem; left: .2rem; width: 4.31rem; height: 2.26rem; background: url(image/page4/title.png) center center no-repeat; background-size: contain; }
-    .m-swipe .page4 .container .cloud { position: absolute; top: 1.55rem; left: 1.2rem; width: 3.19rem; height: 1.19rem; background: url(image/page4/cloud.png) center center no-repeat; background-size: contain; }
+    .m-swipe .page4 .container .cloud { position: absolute; top: 1.55rem; left: 1.2rem; width: 3.81rem; height: 1.19rem; background: url(image/page4/cloud.png?t=101) center center no-repeat; background-size: contain; }
     .m-swipe .page4 .container .logo { position: absolute; bottom: 2.1rem; left: .26rem; }
     .m-swipe .page4 .container .logo::before { content: ''; display: block; position: absolute; top: 0; left: 0; width: 1.12rem; height: .68rem; background: url(image/page4/doudizhu.png) center center no-repeat; background-size: contain; }
     .m-swipe .page4 .container .logo::after { content: ''; display: block; position: absolute; top: .25rem; left: 1.3rem; width: 1.57rem; height: .38rem; background: url(image/page4/logo.png) center center no-repeat; background-size: contain; }
@@ -186,7 +189,12 @@
   <keep-alive>
     <component :is="view"></component>
   </keep-alive>
+
+  <!-- 背景音乐 -->
+  <i id="bgm-switch" :class="[{'anime-note': paused == 'playing'}, paused]" @click="bgmSwitch"></i>
+  <audio id="bgmusic" src="bgmusic.mp3?t=106" autoplay preload loop controls></audio>
 </article>
+
 
 <!-- 动画首页 -->
 <script type="text/x-template" id="template-home">
@@ -202,7 +210,7 @@
             <h2 v-show="animePlay[0]" class="anime-zoomIn">
               <span class="aftext anime-titleAct"></span>
             </h2>
-            <footer class="anime-arrow allow" @click="swipePage(1)"></footer>
+            <footer v-show="animePlay[0]" class="anime-arrow allow" @click="swipePage(1)"></footer>
           </header>
           <section class="anime-shake">
             <div class="bg anime-bgMove"></div>
@@ -239,7 +247,7 @@
             <h2 v-show="animePlay[1]" class="anime-zoomIn">
               <span class="aftext anime-titleAct"></span>
             </h2>
-            <footer class="anime-arrow allow" @click="swipePage(1)"></footer>
+            <footer v-show="animePlay[1]" class="anime-arrow allow" @click="swipePage(1)"></footer>
           </header>
           <section class="anime-shake">
             <div class="cars anime-cars"></div>
@@ -285,7 +293,7 @@
             <h2 v-show="animePlay[2]" class="anime-zoomIn">
               <span class="aftext anime-titleAct"></span>
             </h2>
-            <footer class="anime-arrow allow" @click="swipePage(1)"></footer>
+            <footer v-show="animePlay[2]" class="anime-arrow allow" @click="swipePage(1)"></footer>
           </header>
           <section class="anime-shake">
             <div class="bg anime-bgMove"></div>
@@ -323,7 +331,7 @@
             <h2 v-show="animePlay[3]" class="anime-zoomIn">
               <span class="aftext anime-titleAct"></span>
             </h2>
-            <footer class="anime-arrow allow" @click="swipePage(1)"></footer>
+            <footer v-show="animePlay[3]" class="anime-arrow allow" @click="swipePage(1)"></footer>
           </header>
           <section class="anime-shake">
             <div class="bg anime-bgMove"></div>
@@ -407,8 +415,8 @@
             </div>
 
             <footer>
-              <a @click="downloadDDZ" data-mtaid="dadaddz.detail.down-ddz">点击下载欢乐斗地主</a>
-              <a @click="downloadDadabus" data-mtaid="dadaddz.detail.down-dadabus">点击下载嗒嗒巴士</a>
+              <a @click="downloadDDZ" data-mtaid="dadaddz.detail.down-ddz">下载欢乐斗地主抢福利</a>
+              <a @click="downloadDadabus" data-mtaid="dadaddz.detail.down-dadabus">下载嗒嗒巴士抢福利</a>
             </footer>
           </div>
         </div>
@@ -420,10 +428,10 @@
 <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
 <script src="js/vue.js?rev=3.0.06"></script>
 <script src="js/zepto.js?rev=3.0.06"></script>
-<script src="js/base.js?rev=3.0.17"></script>
+<script src="js/base-debug.js?rev=3.0.21"></script>
 <script src='js/swipe.js?rev=3.0.06'></script>
 <script src='js/touchjs.js?rev=3.0.06'></script>
 
-<script src='js/main.js?rev=3.0.17'></script>
+<script src='js/main.js?rev=3.0.44'></script>
 </body>
 </html>
